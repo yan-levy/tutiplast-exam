@@ -1,0 +1,42 @@
+<nav aria-label='breadcrumb'>
+	<ol class='breadcrumb'>
+		<li class='breadcrumb-item'><a href='/'>Home</a></li>
+		<li class='breadcrumb-item active' aria-current='page'>Vizualizar</li>
+	</ol>
+</nav>
+
+<div class='view-user p-t'>
+	{{#each rows}}
+		<div class='row mb-5'>
+			<div class='col text-center'>
+				<h3>{{this.name}}</h3>
+			</div>
+		</div>
+
+		<table class='table table-bordered'>
+			<thead class='thead-dark'>
+				<tr>
+					<th scope='col'>Nome</th>
+					<th scope='col'>CPF</th>
+					<th scope='col'>Setor</th>
+					<th scope='col'>Telefone</th>
+					<th scope='col'>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope='row'>{{this.id}}</th>
+					<td>{{this.name}}</td>
+					<td>{{this.cpf}}</td>
+					<td>{{this.department}}</td>
+					<td>{{this.phone}}</td>
+					<td>{{this.email}}</td>
+					<td class='text-end'>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	{{/each}}
+
+</div>

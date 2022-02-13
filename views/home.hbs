@@ -1,0 +1,65 @@
+{{#if removedUser}}
+	<div class='alert alert-success alert-dismissible fade show' role='alert'>
+		Colaborador Removido.
+		<button
+			type='button'
+			class='btn-close'
+			data-bs-dismiss='alert'
+			aria-label='Close'
+		></button>
+	</div>
+{{/if}}
+
+<div class='row'>
+	<div class='col-6'><h1>Colaboradores</h1></div>
+	<div class='col-6 d-flex justify-content-end'>
+		<a href='/adduser' type='button' class='btn btn-primary align-self-center'>+
+			Adicionar Colaborador</a>
+	</div>
+</div>
+
+<table class='table table-bordered'>
+	<thead class='thead-dark'>
+		<tr>
+			<th scope='col'>#</th>
+			<th scope='col'>Nome</th>
+			<th scope='col'>CPF</th>
+			<th scope='col'>Setor</th>
+			<th scope='col'>Telefone</th>
+			<th scope='col'>Email</th>
+			<th scope='col' class='text-end'>Ações</th>
+		</tr>
+	</thead>
+	<tbody>
+
+		{{#each rows}}
+			<tr>
+				<th scope='row'>{{this.id}}</th>
+				<td>{{this.name}}</td>
+				<td>{{this.cpf}}</td>
+				<td>{{this.department}}</td>
+				<td>{{this.phone}}</td>
+				<td>{{this.email}}</td>
+				<td class='text-end'>
+
+					<a
+						href='/viewuser/{{this.id}}'
+						type='button'
+						class='btn btn-light btn-small'
+					><i class='bi bi-eye'></i>Vizualizar</a>
+					<a
+						href='/edituser/{{this.id}}'
+						type='button'
+						class='btn btn-light btn-small'
+					><i class='bi bi-pencil'></i>Editar</a>
+					<a
+						href='/{{this.id}}'
+						type='button'
+						class='btn btn-light btn-small'
+					><i class='bi bi-person-x'></i>Deletar</a>
+
+				</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
