@@ -35,7 +35,7 @@ const pool = mysql.createPool({
 // Connect to DB
 pool.getConnection((err, connection) => {
 	if (err) throw err; // not connected
-	console.log('Connected as ID', +connection.threadID);
+	console.log('Connected');
 });
 
 const routes = require('./server/routes/user');
